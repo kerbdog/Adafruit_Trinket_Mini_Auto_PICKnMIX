@@ -8,7 +8,7 @@
 //  PWR - JAMMA PIN 3
 //  GND - JAMMA PIN 1
 //  0   - JAMMA PIN 17
-//  1   - JAMMA PIN 25
+//  2   - JAMMA PIN 25
 //
 // In the above setup - The Holding the D button during POWER ON will skip PICKnMIX
 //
@@ -20,22 +20,27 @@
 // define pin settings
 
 int START = 0;                            // Start button connected to this pin (JAMMA pin 17) 
-int PNM_DISABLE = 1;                      // button that will disable PICKnMIX connected to this pin (JAMMA pin 22=A 23=B 24=C 25=D)
+int PNM_DISABLE = 2;                      // button that will disable PICKnMIX connected to this pin (JAMMA pin 22=A 23=B 24=C 25=D)
+int led = 1;                              // blink 'digital' pin 1 - AKA the built in red LED
 int SKIP;
 
 void setup() {
   sleep_disable();                        // disable sleep mode 
+  pinMode(led, OUTPUT);                   // initialize the digital pin as an output for the LED
   
 
   pinMode(START, OUTPUT);                 // sets the digital pin 0 connected to Start button as OUTPUT
-  pinMode(PNM_DISABLE, INPUT);            // sets the digital pin 1 connected to PNM_DISABLE button as INPUT
+  pinMode(PNM_DISABLE, INPUT);            // sets the digital pin 2 connected to PNM_DISABLE button as INPUT
   digitalWrite(START, HIGH);                                        
   SKIP =digitalRead(PNM_DISABLE);         // check the PNM_DISABLE button state
   if (SKIP == HIGH) {                     // If PNM_DISABLE button is NOT pressed (still in HIGH state)
     digitalWrite(START, LOW);             // sets the digital pin 0 to GND (Hold Start button)
+    digitalWrite(led, HIGH);              // turn pin1/LED ON to indicate the holding of the Start button
     delay(5000);                          // waits for 5 seconds to enable PICKnMIX
   }
-  pinMode(START, INPUT);                  // sets the digital pin 0 as INPUT (Release Start button) 
+  pinMode(START, INPUT);                  // sets the digital pin 0 as INPUT (Release Start button)
+  digitalWrite(led, LOW);                 // turn pin1/LED OFF to indicate the release of the Start button
+
 }
 
 void loop() {
