@@ -2,6 +2,8 @@
 Auto-start PICKnMIX with Adafruit Trinket Mini 3v/5v PCB
 ## Adafruit Trinket Mini 3v/5v Auto PICKnMIX for MVS 161 in 1 (Banana Cart)
 
+By GeorgeSpinner, with super tiny LED status indicator mod by KeRbDoG
+
 Start button will be held for 5 seconds with POWER ON, the Red LED indicator on the Trinket will show when the button is being held
 
 If any button wired to pin 2 is held during POWER ON sequence, the regular 161 in 1 menu will be displayed
