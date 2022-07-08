@@ -26,12 +26,12 @@ int SKIP;
 
 void setup() {
   sleep_disable();                        // disable sleep mode 
-  pinMode(led, OUTPUT);                   // initialize the digital pin as an output for the LED
-  
 
+
+  pinMode(led, OUTPUT);                   // initialize the digital pin as an output for the LED  
   pinMode(START, OUTPUT);                 // sets the digital pin 0 connected to Start button as OUTPUT
   pinMode(PNM_DISABLE, INPUT);            // sets the digital pin 2 connected to PNM_DISABLE button as INPUT
-  digitalWrite(START, HIGH);                                        
+  digitalWrite(START, HIGH);
   SKIP =digitalRead(PNM_DISABLE);         // check the PNM_DISABLE button state
   if (SKIP == HIGH) {                     // If PNM_DISABLE button is NOT pressed (still in HIGH state)
     digitalWrite(START, LOW);             // sets the digital pin 0 to GND (Hold Start button)
@@ -40,7 +40,6 @@ void setup() {
   }
   pinMode(START, INPUT);                  // sets the digital pin 0 as INPUT (Release Start button)
   digitalWrite(led, LOW);                 // turn pin1/LED OFF to indicate the release of the Start button
-
 }
 
 void loop() {
