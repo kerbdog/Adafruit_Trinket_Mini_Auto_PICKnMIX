@@ -4,7 +4,7 @@ Auto-start PICKnMIX with Adafruit Trinket Mini 3v/5v PCB
 
 Start button will be held for 5 seconds with POWER ON, the Red LED indicator on the Trinket will show when the button is being held
 
-If any button wired to pin 1 is held during POWER ON sequence, the regular 161 in 1 menu will be displayed
+If any button wired to pin 2 is held during POWER ON sequence, the regular 161 in 1 menu will be displayed
 
 How to setup:
   - PWR - JAMMA PIN 3
