@@ -10,7 +10,7 @@ How to setup:
   - PWR - JAMMA PIN 3
   - GND - JAMMA PIN 1
   - 0   - JAMMA PIN 17
-  - 1   - JAMMA PIN 25
+  - 2   - JAMMA PIN 25
 
 In the above setup - The Holding the D button during POWER ON will skip PICKnMIX
 
