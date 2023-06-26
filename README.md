@@ -11,11 +11,15 @@ Start button will be held for 5 seconds with POWER ON, the Red LED indicator on 
 
 If any button wired to pin 2 is held during POWER ON sequence, the regular 161 in 1 menu will be displayed
 
+MVS
 How to setup:
   - PWR - JAMMA PIN 3
   - GND - JAMMA PIN 1
   - 0   - JAMMA PIN 17
   - 2   - JAMMA PIN 25
+
+AES
+  - wip
 
 In the above setup - The Holding the D button during POWER ON will skip PICKnMIX
 
